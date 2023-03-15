@@ -1,19 +1,23 @@
-import { dbConnect } from './db.connect.js';
 import mongoose from 'mongoose';
+import { dbConnect } from './db.connect.js';
 
-jest.mock('mongoose');
-jest.mock('../config.js', () => ({
-  __dirname: 'test',
-  config: {
-    secret: 'test',
-  },
-}));
-describe('Given a dbconnect function', () => {
-  dbConnect();
-
-  describe('When its called', () => {
-    test('Then it should call the mongoose.connect method', () => {
-      expect(mongoose.connect).toHaveBeenCalled();
+describe('Given the dbConnect funtion ', () => {
+  describe('When NODE_ENV !== test ', () => {
+    test('Then it should be a connection to testing db', async () => {
+      mongoose.disconnect();
+      const result = await dbConnect();
+      expect(typeof result).toBe(typeof mongoose);
+      expect(mongoose.connection.db.databaseName).toContain('Testing');
+      mongoose.disconnect();
+    });
+  });
+  describe('When NODE_ENV !== test', () => {
+    test('Then it should be a connection to testing db', async () => {
+      mongoose.disconnect();
+      const result = await dbConnect('dev');
+      expect(typeof result).toBe(typeof mongoose);
+      expect(mongoose.connection.db.databaseName).not.toContain('Testing');
+      mongoose.disconnect();
     });
   });
 });
