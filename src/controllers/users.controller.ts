@@ -4,7 +4,6 @@ import { User } from '../entities/user';
 import { Repo } from '../repository/repo.interface';
 import { HTTPError } from '../interfaces/error.js';
 import { Auth, PayloadToken } from '../services/auth.js';
-import { url } from 'inspector';
 const debug = createDebug('REFORMAS:controller:users');
 export class UsersController {
   constructor(public repo: Repo<User>) {
@@ -101,7 +100,7 @@ export class UsersController {
       const deleteId = req.params.id;
       debug(deleteId);
 
-      const data = await this.repo.destroy(deleteId);
+      await this.repo.destroy(deleteId);
       resp.json({
         results: [],
       });
