@@ -21,14 +21,14 @@ app.use((_req, _resp, next) => {
   next();
 });
 
-debug({ __dirname });
-app.use(express.static(path.resolve(__dirname, 'public')));
+// debug({ __dirname });
+// app.use(express.static(path.resolve(__dirname, 'public')));
 
 app.use('/users', usersRouter);
 
 app.get('/', (_req, resp) => {
   resp.json({
-    info: '202301-W07CH05-santiago-fernandez-backend-rrss',
+    info: 'reformas',
     endpoints: {
       users: '/users',
     },
