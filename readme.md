@@ -3,7 +3,7 @@ Week 9 - Proyecto final
 Realiza una app fullstack MERN/MEAN con las siguientes características deseables:
 Funcionalidad
 
-    Listado de itemss
+    Listado de items
     Detalle de item (página aparte)
     Crear item (página aparte con un formulario e imagen obligatoria con un campo tipo file)
     Modificar item (mismo formulario que para crear)

@@ -13,14 +13,14 @@ const userSchema = new Schema<User>({
   },
   firstName: {
     type: String,
-    required: true,
+    required: false,
   },
   lastName: {
     type: String,
   },
   telephone: {
     type: String,
-    required: true,
+    required: false,
   },
 });
 
