@@ -1,10 +1,9 @@
-import path from 'path';
 import express, { NextFunction, Request, Response } from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 import { usersRouter } from './routers/users.router.js';
 import createDebug from 'debug';
-import { CustomError } from './interfaces/error.js';
+import { CustomError } from './errors/errors.js';
 const debug = createDebug('REFORMAS:app');
 export const app = express();
 app.disable('x-powered-by');
@@ -20,9 +19,6 @@ app.use((_req, _resp, next) => {
   debug('Soy un middleware');
   next();
 });
-
-// debug({ __dirname });
-// app.use(express.static(path.resolve(__dirname, 'public')));
 
 app.use('/users', usersRouter);
 
@@ -45,6 +41,7 @@ app.patch('/:id');
 app.delete('/:id');
 
 app.use(
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   (error: CustomError, _req: Request, resp: Response, _next: NextFunction) => {
     debug('Soy el middleware de errores');
     const status = error.statusCode || 500;
