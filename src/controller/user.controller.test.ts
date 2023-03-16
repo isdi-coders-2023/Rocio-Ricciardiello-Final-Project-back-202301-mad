@@ -28,7 +28,7 @@ describe('Given users.controller', () => {
       const req = {
         body: {
           email: 'a@test.com',
-          password: mockPassword,
+          passwd: mockPassword,
         },
       } as unknown as Request;
 
@@ -68,7 +68,7 @@ describe('Given users.controller', () => {
     test('then if there is no email, it should return next', async () => {
       const req = {
         body: {
-          password: mockPassword,
+          passwd: mockPassword,
         },
       } as unknown as Request;
 
