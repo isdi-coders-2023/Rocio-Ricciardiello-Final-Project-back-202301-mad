@@ -62,4 +62,19 @@ export class UserController {
       next(error);
     }
   }
+
+  async delete(req: Request, resp: Response, next: NextFunction) {
+    try {
+      debug('delete');
+      const deleteId = req.params.id;
+      debug(deleteId);
+
+      await this.repo.destroy(deleteId);
+      resp.json({
+        results: [],
+      });
+    } catch (error) {
+      next(error);
+    }
+  }
 }

@@ -24,7 +24,7 @@ app.use('/users', usersRouter);
 
 app.get('/', (_req, resp) => {
   resp.json({
-    info: 'reformas',
+    info: 'Reformas',
     endpoints: {
       users: '/users',
     },
