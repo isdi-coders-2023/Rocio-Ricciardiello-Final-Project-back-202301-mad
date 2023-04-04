@@ -1,8 +1,8 @@
-import { User } from '../entities/user.js';
+import { User } from '../../entities/user.js';
 import { Repo } from './users.repo.interface.js';
 import createDebug from 'debug';
 import { UserModel } from './users.mongo.model.js';
-import { HTTPError } from '../errors/errors.js';
+import { HTTPError } from '../../errors/errors.js';
 
 const debug = createDebug('REFORMAS:repo:users');
 

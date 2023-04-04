@@ -1,4 +1,4 @@
-import { User } from '../entities/user';
+import { User } from '../../entities/user';
 import { UserModel } from './users.mongo.model';
 import { UsersMongoRepo } from './users.mongo.repo';
 import { Repo } from './users.repo.interface';

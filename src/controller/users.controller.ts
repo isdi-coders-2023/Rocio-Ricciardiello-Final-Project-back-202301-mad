@@ -1,11 +1,11 @@
 import { Response, Request, NextFunction } from 'express';
 import { User } from '../entities/user.js';
 import { HTTPError } from '../errors/errors.js';
-import { Repo } from '../repository/users.repo.interface.js';
+import { Repo } from '../repository/users.repo/users.repo.interface.js';
 import createDebug from 'debug';
 import { Auth, PayloadToken } from '../services/auth.js';
 
-const debug = createDebug('REFORMAS:controller');
+const debug = createDebug('REFORMAS:controller users');
 
 export class UserController {
   constructor(public repo: Repo<User>) {
