@@ -51,7 +51,7 @@ export class LivingSpaceController {
       debug('GetBy Id livingSpace');
       const data = await this.repo.queryById(req.params.id);
       resp.json({
-        results: data,
+        results: [data],
       });
     } catch (error) {
       next(error);

@@ -30,6 +30,13 @@ const livingSpaceSchema = new Schema<LivingSpace>({
     type: Object,
     required: false,
   },
+  spaceType: {
+    type: String,
+    required: false,
+  },
+  image: {
+    type: String,
+  },
 });
 
 livingSpaceSchema.set('toJSON', {

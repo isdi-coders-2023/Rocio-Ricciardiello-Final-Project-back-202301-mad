@@ -7,6 +7,8 @@ export type LivingSpace = {
   wardrobe?: productDetail;
   walls?: productDetail;
   door?: doorDetail;
+  spaceType?: string;
+  image?: string;
 };
 
 export type productDetail = {

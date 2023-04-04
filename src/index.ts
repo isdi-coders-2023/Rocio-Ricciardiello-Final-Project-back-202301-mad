@@ -4,7 +4,7 @@ import { dbConnect } from './db/db.connect.js';
 import createDebug from 'debug';
 const debug = createDebug('REFORMAS:index');
 
-const PORT = process.env.PORT || 4500;
+const PORT = process.env.PORT || 4501;
 
 const server = http.createServer(app);
 
